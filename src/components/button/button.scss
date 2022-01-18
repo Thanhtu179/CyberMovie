@@ -24,8 +24,8 @@ button {
 
 .btn-outline {
   border: 3px solid $white;
-  color: $white;
   background-color: transparent;
+  color: $white;
   box-shadow: unset;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -39,5 +39,5 @@ button {
 .btn.small {
   border-width: 2px;
   padding: 0.25rem 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }

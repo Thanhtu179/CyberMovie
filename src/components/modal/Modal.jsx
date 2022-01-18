@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./modal.scss";
 
 const Modal = (props) => {
-  const [active, setActive] = useStateate(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     setActive(props.active);

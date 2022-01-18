@@ -1,19 +1,19 @@
-import axios from "axios";
-import queryString from "query-string";
+import axios from 'axios';
+import queryString from 'query-string';
 
-import apiConfig from "./apiConfig";
+import apiConfig from './apiConfig';
 
-const axiosConfig = axios.create({
-    baseUrl: apiConfig.baseUrl,
+const axiosClient = axios.create({
+    baseURL: apiConfig.baseUrl,
     headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
     },
     paramsSerializer: params => queryString.stringify({ ...params, api_key: apiConfig.apiKey })
-})
+});
 
-axisosClient.interceptor.request.use(async (config) => config);
+axiosClient.interceptors.request.use(async (config) => config);
 
-axisosClient.interceptor.response.use((response) => {
+axiosClient.interceptors.response.use((response) => {
     if (response && response.data) {
         return response.data;
     }
@@ -23,4 +23,4 @@ axisosClient.interceptor.response.use((response) => {
     throw error;
 });
 
-export default axisosClient;
+export default axiosClient;
